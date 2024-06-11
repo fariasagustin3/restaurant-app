@@ -6,7 +6,9 @@ const Navbar = () => {
 
   return (
     <div className="py-2 px-5 flex items-center justify-between w-screen">
-      <h2 className="text-[var(--white-color)] text-xl text-left py-3">Menu</h2>
+      <Link to="/menu">
+        <h2 className="text-[var(--white-color)] text-xl text-left py-3">Menu</h2>
+      </Link>
       <Link to="/cart">
         <button className="relative">
           {cart.length !== 0 && (
