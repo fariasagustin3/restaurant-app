@@ -8,5 +8,10 @@ export const useStore = create((set) => ({
   addProductToCart: (product) => set(state => ({
     ...state,
     cart: [...state.cart, product]
+  })),
+
+  deleteProductFromCart: (productId) => set(state => ({
+    ...state,
+    cart: state.cart.filter(product => product.id !== productId)
   }))
 }))

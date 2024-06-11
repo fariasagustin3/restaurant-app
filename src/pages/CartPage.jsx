@@ -3,6 +3,7 @@ import { useStore } from "../store"
 
 const CartPage = () => {
   const cart = useStore(state => state.cart)
+  const deleteProductFromCart = useStore(state => state.deleteProductFromCart)
 
   return (
     <div className="w-screen h-screen" style={{ backgroundImage: "url('/assets/image-background.png')", backgroundSize: "cover" }}>
@@ -14,7 +15,11 @@ const CartPage = () => {
               <img src={product.image} alt="" className="w-16 rounded-md" />
               <span className="text-[var(--white-color)]">{product.name}</span>
               <span className="text-[var(--white-color)]">${product.price}</span>
-              <span className="text-[var(--white-color)]">{product.category}</span>
+              <button onClick={() => deleteProductFromCart(product.id)} className="text-[var(--white-color)]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="red" className="size-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
           ))}
         </div>
