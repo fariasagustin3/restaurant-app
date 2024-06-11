@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import MenuPage from './pages/MenuPage.jsx';
+import CartPage from './pages/CartPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: "menu",
     element: <MenuPage />,
+  },
+  {
+    path: "cart",
+    element: <CartPage />,
   },
 ]);
 

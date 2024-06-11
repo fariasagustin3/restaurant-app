@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { categories, productos } from '../data'
 import { useStore } from '../store';
+import Navbar from '../components/Navbar';
 
 const MenuPage = () => {
   const [categorySelected, setCategorySelected] = useState("todos");
@@ -21,10 +22,7 @@ const MenuPage = () => {
   return (
     <div className="w-screen h-full" style={{ backgroundImage: "url('/assets/image-background.png')", backgroundSize: "contain" }}>
       <div className='bg-[var(--bg-black)]'>
-        <div>
-          <h2 className="text-[var(--white-color)] text-xl text-center py-3">Menu</h2>
-          
-        </div>
+        <Navbar />
 
         {/* seccion en donde el usuario selecciona la categoria */}
         <div className="flex items-center gap-7 overflow-x-auto py-5 px-5">
