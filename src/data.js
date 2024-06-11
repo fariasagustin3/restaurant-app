@@ -7,7 +7,7 @@ export const categories = [
   { id: 6, name: "Empanadas", value: "empanadas" }
 ];
 
-export const products = [
+export const productos = [
   // Bebidas
   { id: 1, name: "Coca Cola", image: "/images/bebidas/coca-cola.jpg", category: "bebidas", duration: 5, price: 1.50 },
   { id: 2, name: "Pepsi", image: "/images/bebidas/pepsi.jpg", category: "bebidas", duration: 5, price: 1.50 },
@@ -15,7 +15,7 @@ export const products = [
   { id: 4, name: "Agua Mineral", image: "/images/bebidas/agua-mineral.jpg", category: "bebidas", duration: 2, price: 1.00 },
   { id: 5, name: "Café", image: "/images/bebidas/cafe.jpg", category: "bebidas", duration: 10, price: 1.20 },
   { id: 6, name: "Té Helado", image: "/images/bebidas/te-helado.jpg", category: "bebidas", duration: 5, price: 1.50 },
-  { id: 7, name: "Jugo de Naranja", image: "/images/bebidas/jugo-naranja.jpg", category: "bebidas", duration: 7, price: 2.50 },
+  { id: 7, name: "Jugo de Naranja", image: "/images/bebidas/jugo-de-naranja.jpg", category: "bebidas", duration: 7, price: 2.50 },
 
   // Pizzas
   { id: 8, name: "Pizza Margherita", image: "/images/pizzas/pizza-margherita.jpg", category: "pizzas", duration: 20, price: 8.00 },

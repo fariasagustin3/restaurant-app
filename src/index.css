@@ -8,9 +8,11 @@
 }
 
 :root {
+  --bg-black: rgba(0, 0, 0, 0.8);
   --black-color: #000;
   --white-color: #FFF;
-  --wine-color: #721011;
+  --wine-color: #a1181a;
   --strong-whine-color: #1F1513;
   --gray-color: #E3DCCA;
 }
+
