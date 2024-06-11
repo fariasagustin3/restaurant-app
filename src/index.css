@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --black-color: #000;
+  --white-color: #FFF;
+  --wine-color: #721011;
+  --strong-whine-color: #1F1513;
+  --gray-color: #E3DCCA;
+}
