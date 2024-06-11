@@ -32,10 +32,10 @@ const MenuPage = () => {
         </div>
 
         {/* seccion en donde el usuario puede ver los productos filtrados */}
-        <div className='flex flex-wrap items-center justify-center gap-5 py-10'>
+        <div className='flex flex-wrap items-center justify-center gap-7 py-10'>
           {/* product item */}
           {products?.map(product => (
-            <div className='w-32 h-40 bg-white rounded-md' key={product.id}>
+            <div className='w-36 h-40 bg-white rounded-md' key={product.id}>
               <img src={product.image} alt="" className='w-full h-[60%] object-cover rounded-t-md' />
               <div className='px-2 flex flex-col justify-between h-[40%] py-1'>
                 <p className='text-sm leading-4 font-semibold'>{product.name}</p>
@@ -46,16 +46,6 @@ const MenuPage = () => {
               </div>
             </div>
           ))}
-          {/* <div className='w-32 h-40 bg-white'>
-          <img src="/images/pizzas/pizza-bbq.jpg" alt="" className='w-full h-[60%] object-cover rounded-t-md' />
-          <div className='px-2 flex flex-col justify-between h-[40%] py-1'>
-            <p className='text-sm leading-4 font-semibold'>Pizza Barbacoa Con 4 Quesos</p>
-            <div className='flex items-center justify-between'>
-              <p className='text-xs leading-4 font-semibold'>$2.50</p>
-              <p className='text-xs leading-4 font-semibold text-[var(--wine-color)]'>30min</p>
-            </div>
-          </div>
-        </div> */}
         </div>
       </div>
     </div>
