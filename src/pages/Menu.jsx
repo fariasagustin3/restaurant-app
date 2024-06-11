@@ -1,7 +1,7 @@
-const Menu = () => {
+const MenuPage = () => {
   return (
-    <div>Menu</div>
+    <div>MenuPage</div>
   )
 }
 
-export default Menu
+export default MenuPage
