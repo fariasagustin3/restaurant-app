@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react'
 import { categories, productos } from '../data'
+import { useStore } from '../store';
 
 const MenuPage = () => {
   const [categorySelected, setCategorySelected] = useState("todos");
   const [products, setProducts] = useState([]);
+  const addProductToCart = useStore((state) => state.addProductToCart)
+  const cart = useStore(state => state.cart)
 
   useEffect(() => {
     if (categorySelected === "todos") {
@@ -11,12 +14,17 @@ const MenuPage = () => {
     } else {
       setProducts(productos.filter(product => product.category === categorySelected))
     }
-  }, [categorySelected])
+
+    console.log(cart)
+  }, [categorySelected, cart])
 
   return (
     <div className="w-screen h-full" style={{ backgroundImage: "url('/assets/image-background.png')", backgroundSize: "contain" }}>
       <div className='bg-[var(--bg-black)]'>
-        <h2 className="text-[var(--white-color)] text-xl text-center py-3">Menu</h2>
+        <div>
+          <h2 className="text-[var(--white-color)] text-xl text-center py-3">Menu</h2>
+          
+        </div>
 
         {/* seccion en donde el usuario selecciona la categoria */}
         <div className="flex items-center gap-7 overflow-x-auto py-5 px-5">
@@ -35,7 +43,7 @@ const MenuPage = () => {
         <div className='flex flex-wrap items-center justify-center gap-7 py-10'>
           {/* product item */}
           {products?.map(product => (
-            <div className='w-36 h-40 bg-white rounded-md' key={product.id}>
+            <button className={cart.includes(product) ? 'w-36 h-40 bg-white rounded-md opacity-60' : 'w-36 h-40 bg-white rounded-md transition-all duration-500'} key={product.id} onClick={() => addProductToCart(product)} disabled={cart.includes(product)}>
               <img src={product.image} alt="" className='w-full h-[60%] object-cover rounded-t-md' />
               <div className='px-2 flex flex-col justify-between h-[40%] py-1'>
                 <p className='text-sm leading-4 font-semibold'>{product.name}</p>
@@ -44,7 +52,7 @@ const MenuPage = () => {
                   <p className='text-xs leading-4 font-semibold text-[var(--wine-color)]'>{product.duration}min</p>
                 </div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
       </div>
